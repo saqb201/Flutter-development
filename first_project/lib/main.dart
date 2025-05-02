@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:first_flutter_project_in_vs_code/json_model.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart ' as http;
 
@@ -9,60 +8,92 @@ void main() {
 
 class Myapp extends StatefulWidget {
   const Myapp({super.key});
-
   @override
   State<Myapp> createState() => _MyappState();
 }
 
 class _MyappState extends State<Myapp> {
-  List<PostModel> postlist = [];
-  Future<List<PostModel>> getPostapi() async {
-    // ignore: non_constant_identifier_names
-    final Response = await http.get(
-      Uri.parse('https://jsonplaceholder.typicode.com/posts'),
+  List<Photos> getlist = [];
+  Future<List<Photos>> getlistapi() async {
+    final response = await http.get(
+      Uri.parse('https://jsonplaceholder.typicode.com/photos'),
     );
-    var data = jsonDecode(Response.body.toString());
-    if (Response.statusCode == 200) {
-      for (var i in data) {
-        postlist.add(PostModel.fromJson(i));
+
+    var data = jsonDecode(response.body.toString());
+    print(data);
+    if (response.statusCode == 200) {
+      for (Map i in data) {
+        Photos photos = Photos(title: i['title'], url: i['url'], id: i['id']);
+        // getlist.add(Photos.fromJson(i));
+        getlist.add(photos);
       }
-      return postlist;
+      return getlist;
     } else {
-      return postlist;
+      return getlist;
     }
   }
 
-  @override
+  // ignore: annotate_overrides
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.purple,
-          title: Text("Playing with Api", style: TextStyle(color: Colors.white)),
+          title: Text(
+            "Playing with Api part 2",
+            style: TextStyle(color: Colors.white),
+          ),
         ),
         body: Column(
           children: [
             Expanded(
               child: FutureBuilder(
-                future: getPostapi(),
-                builder: (context, snapshot) {
-                  if (!snapshot.hasData) {
-                    return Text("Loading Please w8");
-                  } else {
-                    return ListView.builder(
-                      itemCount: postlist.length,
-                      itemBuilder: (context, index) {
-                        return Text(index.toString());
-                      },
-                    );
-                  }
+                future: getlistapi(),
+                builder: (context, AsyncSnapshot<List<Photos>> snapshot) {
+                  return ListView.builder(
+                    itemCount: getlist.length,
+                    itemBuilder: (context, index) {
+                      return ListTile(
+                        leading: CircleAvatar(
+                          backgroundImage: NetworkImage(
+                            snapshot.data![index].url.toString(),
+                          ),
+                        ),
+                        subtitle: Text(snapshot.data![index].title.toString()),
+                        title: Text(snapshot.data![index].id.toString()),
+                      );
+                    },
+                  );
                 },
               ),
             ),
+            // Expanded(
+            //   child: FutureBuilder(
+            //     future: getlistapi(),
+            //     builder: (context, snapshot) {
+            //       return ListView.builder(
+            //         itemCount: getlist.length,
+            //         itemBuilder: (context, index) {
+            //           return ListTile(
+            //             title: Text(
+            //               'Syed M Abdullah is on too ',
+            //             ),
+            //           );
+            //         },
+            //       );
+            //     },
+            //   ),
+            // ),
           ],
         ),
       ),
     );
   }
+}
+
+class Photos {
+  String url, title;
+  int id;
+  Photos({required this.title, required this.url, required this.id});
 }
