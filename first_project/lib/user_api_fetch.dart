@@ -58,9 +58,12 @@ class _MyappState extends State<Myapp> {
                       itemBuilder: (context, index) {
                         return Column(
                           children: [
-                           Reusable(value: snapshot.data![index].name.toString(), title: "Name"),
-                          //  SizedBox(height: 5,),
-                           Reusable(
+                            Reusable(
+                              value: snapshot.data![index].name.toString(),
+                              title: "Name",
+                            ),
+                            //  SizedBox(height: 5,),
+                            Reusable(
                               value: snapshot.data![index].username.toString(),
                               title: "Username",
                             ),
@@ -70,11 +73,12 @@ class _MyappState extends State<Myapp> {
                               title: "Email",
                             ),
                             Reusable(
-                              value: snapshot.data![index].address!.city.toString(),
+                              value:
+                                  snapshot.data![index].address!.city
+                                      .toString(),
                               title: "City",
                             ),
-                            SizedBox(height: 20,),
-
+                            SizedBox(height: 20),
                           ],
                         );
                       },
@@ -96,21 +100,19 @@ class Photos {
   Photos({required this.title, required this.url, required this.id});
 }
 
+// ignore: must_be_immutable
 class Reusable extends StatelessWidget {
   String title, value;
   Reusable({super.key, required this.value, required this.title});
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
+    return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(title),
-                                  Text(value),
-                                ],
-                              ),
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [Text(title), Text(value)],
+      ),
     );
   }
 }
