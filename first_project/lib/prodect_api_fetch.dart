@@ -56,11 +56,20 @@ class _MyappState extends State<Myapp> {
                           return Column(
                             children: [
                               ListTile(
-                                  title: Text(snapshot.data!.data![index].shop!.name.toString()),
-                                  subtitle: Text(snapshot.data!.data![index].shop!.shopemail.toString()),
-                                  leading: CircleAvatar(
-                                    backgroundImage: NetworkImage(snapshot.data!.data![index].shop!.image.toString()),
+                                title: Text(
+                                  snapshot.data!.data![index].shop!.name
+                                      .toString(),
+                                ),
+                                subtitle: Text(
+                                  snapshot.data!.data![index].shop!.shopemail
+                                      .toString(),
+                                ),
+                                leading: CircleAvatar(
+                                  backgroundImage: NetworkImage(
+                                    snapshot.data!.data![index].shop!.image
+                                        .toString(),
                                   ),
+                                ),
                               ),
                               Container(
                                 height: MediaQuery.of(context).size.height * .3,
@@ -96,12 +105,15 @@ class _MyappState extends State<Myapp> {
                                           ),
                                         ),
                                       ),
-                                    
                                     );
                                   },
                                 ),
                               ),
-                              Icon(snapshot.data!.data![index].inWishlist! == true? Icons.favorite : Icons.favorite_outline),
+                              Icon(
+                                snapshot.data!.data![index].inWishlist! == true
+                                    ? Icons.favorite
+                                    : Icons.favorite_outline,
+                              ),
                             ],
                           );
                         },
