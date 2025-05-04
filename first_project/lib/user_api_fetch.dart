@@ -1,6 +1,6 @@
 import 'dart:convert';
 // import 'dart:developer';
-import 'package:first_flutter_project_in_vs_code/user_model.dart';
+import 'package:first_flutter_project_in_vs_code/Models/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart ' as http;
 

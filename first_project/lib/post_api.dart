@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:first_flutter_project_in_vs_code/json_model.dart';
+import 'package:first_flutter_project_in_vs_code/Models/json_model.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart ' as http;
 
