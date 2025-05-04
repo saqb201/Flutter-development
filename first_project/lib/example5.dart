@@ -138,6 +138,7 @@ class Photos {
   Photos({required this.title, required this.url, required this.id});
 }
 
+// ignore: must_be_immutable
 class Reusable extends StatelessWidget {
   String title, value;
   Reusable({super.key, required this.value, required this.title});

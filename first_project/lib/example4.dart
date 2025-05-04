@@ -58,13 +58,15 @@ class _MyappState extends State<Myapp> {
                                   value: data![index]['name'].toString(),
                                   title: 'name',
                                 ),
+
                                 // Reusable(
                                 //   value: data![index]['address'].toString(),
                                 //   title: 'Address',
                                 // ),
-
                                 Reusable(
-                                  value: data![index]['address']['geo']['lat'].toString(),
+                                  value:
+                                      data![index]['address']['geo']['lat']
+                                          .toString(),
                                   title: 'Lat',
                                 ),
                                 Reusable(
@@ -102,7 +104,7 @@ class Reusable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.all(8.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [Text(title), Text(value)],
