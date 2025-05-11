@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:uni_task_project/Signup.dart';
 import 'package:uni_task_project/homepage.dart';
 
 void main() {
@@ -29,6 +30,8 @@ class _MyAppState extends State<MyApp> {
       ),
       home: HomePage(), // HomePage will be the starting screen
     );
+  }
+}
     // MaterialApp(
     //   debugShowCheckedModeBanner: false,
     //   theme: ThemeData(
@@ -141,5 +144,3 @@ class _MyAppState extends State<MyApp> {
     //   ),
     // ),
     // );
-  }
-}

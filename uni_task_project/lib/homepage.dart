@@ -40,8 +40,12 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.all(16.0),
                   child: Row(
                     children: [
-                      Image.asset('images/ned logo.png', height: 80, width: 80),
-                      SizedBox(width: 60,),
+                      Image.asset(
+                        'assets/images/ned logo.png',
+                        height: 80,
+                        width: 80,
+                      ),
+                      SizedBox(width: 60),
                       Text(
                         'CSIT',
                         textAlign: TextAlign.center,
@@ -51,8 +55,12 @@ class _HomePageState extends State<HomePage> {
                           color: Colors.indigo,
                         ),
                       ),
-                      SizedBox(width: 55,),
-                      Image.asset('images/arg_logo.png', height: 80, width: 80),
+                      SizedBox(width: 55),
+                      Image.asset(
+                        'assets/images/arg_logo.png',
+                        height: 80,
+                        width: 80,
+                      ),
                       SizedBox(width: 16),
                       // Optionally add another Image or icon here
                     ],
@@ -71,101 +79,101 @@ class _HomePageState extends State<HomePage> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                SizedBox(height: 20),                
-                // Container for interactive buttons and text                
-                  Container(
-                    padding: EdgeInsets.all(20),
-                    height: 350,
-                    width: 350,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(30),
-                      boxShadow: [
-                        BoxShadow(
-                          // ignore: deprecated_member_use
-                          color: Colors.black.withOpacity(0.2),
-                          blurRadius: 10,
-                          offset: Offset(0, 5),
-                        ),
-                      ],
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [                                              
-                        SizedBox(height: 20,) ,
-                        Text(
-                          'Register yourself here.',
-                          style: TextStyle(fontFamily: 'Poppins'),
-                        ),
-                        SizedBox(height: 20),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                          child: ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
+                SizedBox(height: 20),
+                // Container for interactive buttons and text
+                Container(
+                  padding: EdgeInsets.all(20),
+                  height: 350,
+                  width: 350,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(30),
+                    boxShadow: [
+                      BoxShadow(
+                        // ignore: deprecated_member_use
+                        color: Colors.black.withOpacity(0.2),
+                        blurRadius: 10,
+                        offset: Offset(0, 5),
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(height: 20),
+                      Text(
+                        'Register yourself here.',
+                        style: TextStyle(fontFamily: 'Poppins'),
+                      ),
+                      SizedBox(height: 20),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
                               context,
                               MaterialPageRoute(
                                 builder: (context) => RegisterPage(),
                               ),
                             );
-                            },
-                            style: ElevatedButton.styleFrom(
-                              foregroundColor: Colors.white,
-                              backgroundColor: Colors.indigo,
-                              padding: EdgeInsets.symmetric(
-                                vertical: 15,
-                                horizontal: 40,
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
-                              ),
+                          },
+                          style: ElevatedButton.styleFrom(
+                            foregroundColor: Colors.white,
+                            backgroundColor: Colors.indigo,
+                            padding: EdgeInsets.symmetric(
+                              vertical: 15,
+                              horizontal: 40,
                             ),
-                            child: Text(
-                              'Register',
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                          ),
+                          child: Text(
+                            'Register',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 50),
+                      Text(
+                        'View your attendance here.',
+                        style: TextStyle(fontFamily: 'Poppins'),
+                      ),
+                      SizedBox(height: 20),
+                      // View Attendance Button
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => LoginPage(),
+                              ),
+                            );
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.indigo,
+                            padding: EdgeInsets.symmetric(
+                              vertical: 15,
+                              horizontal: 40,
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                          ),
+                          child: Text(
+                            'Log In',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
-                        SizedBox(height: 50),
-                        Text(
-                          'View your attendance here.',
-                          style: TextStyle(fontFamily: 'Poppins'),
-                        ),
-                        SizedBox(height: 20),
-                        // View Attendance Button
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                          child: ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => LoginPage(),
-                                ),
-                              );
-                            },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.indigo,
-                              padding: EdgeInsets.symmetric(
-                                vertical: 15,
-                                horizontal: 40,
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                            ),
-                            child: Text(
-                              'Log In',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),               
+                      ),
+                    ],
+                  ),
+                ),
                 SizedBox(height: 20),
                 // Note Section
                 Container(
@@ -204,7 +212,7 @@ class _HomePageState extends State<HomePage> {
                         style: TextStyle(fontFamily: 'Poppins'),
                       ),
                       Text(
-                        '*Your Email format must be in *****@cloud.neduet.edu.pk' ,
+                        '*Your Email format must be in *****@cloud.neduet.edu.pk',
                         style: TextStyle(fontFamily: 'Poppins'),
                       ),
                     ],

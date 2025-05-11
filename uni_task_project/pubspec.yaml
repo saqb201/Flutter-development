@@ -59,7 +59,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/
+    - assets/images/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -76,17 +76,17 @@ flutter:
   fonts:
     - family: Rubik-Bold
       fonts:
-        - asset: fonts/Rubik-Bold.ttf
+        - asset: assets/fonts/Rubik-Bold.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
     - family: Inria
       fonts:
-        - asset: fonts/InriaSans-Regular.ttf
+        - asset: assets/fonts/InriaSans-Regular.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
     - family: Poppins
       fonts:
-        - asset: fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Regular.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
