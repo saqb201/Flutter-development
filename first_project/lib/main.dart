@@ -1,8 +1,6 @@
-
 // import 'dart:developer';
-import 'package:first_flutter_project_in_vs_code/Signup.dart';
+import 'package:first_flutter_project_in_vs_code/upload_image.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart ' as http;
 
 void main() {
   runApp(Myapp());
@@ -22,7 +20,7 @@ class _MyappState extends State<Myapp> {
       title: "Flutter",
       theme: ThemeData(primarySwatch: Colors.purple),
       debugShowCheckedModeBanner: false,
-      home: Signup(),
+      home: upload_image(),
     );
   }
 }

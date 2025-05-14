@@ -71,7 +71,7 @@ class _MyappState extends State<Myapp> {
                                   ),
                                 ),
                               ),
-                              Container(
+                              SizedBox(
                                 height: MediaQuery.of(context).size.height * .3,
                                 width: MediaQuery.of(context).size.width * .1,
                                 child: ListView.builder(
