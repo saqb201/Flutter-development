@@ -58,6 +58,7 @@ class _upload_imageState extends State<upload_image> {
     }
   }
 
+  @override
   Widget build(BuildContext context) {
     return ModalProgressHUD(
       inAsyncCall: showSpinner,
@@ -82,10 +83,10 @@ class _upload_imageState extends State<upload_image> {
                     child:
                         image == null
                             ? Center(child: Text("Pick Image"))
-                            : Container(
-                              child: Image.file(File(image!.path).absolute),
+                            : SizedBox(
                               height: 150,
                               width: 150,
+                              child: Image.file(File(image!.path).absolute),
                             ),
                   ),
                 ),
