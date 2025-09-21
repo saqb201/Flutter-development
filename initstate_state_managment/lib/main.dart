@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:initstate_state_managment/provider/auth_provider.dart';
 import 'package:initstate_state_managment/provider/count_provider.dart';
 import 'package:initstate_state_managment/provider/example_one_provider_.dart';
 import 'package:initstate_state_managment/provider/fav_provider.dart';
 import 'package:initstate_state_managment/provider/theme_provider.dart';
 import 'package:initstate_state_managment/screen/theme_screen.dart';
+import 'package:initstate_state_managment/loginscreen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -26,6 +28,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => ExampleOneProvider()),
         ChangeNotifierProvider(create: (_) => FavItem()),
         ChangeNotifierProvider(create: (_) => ThemeProvider()),
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
       ],
       child: Builder(
         builder: (BuildContext context) {
@@ -43,7 +46,7 @@ class MyApp extends StatelessWidget {
 
             ),
             debugShowCheckedModeBanner: false,
-            home: Scaffold(body: ThemeScreen()),
+            home: LoginScreen(),
           );
         },
       ),

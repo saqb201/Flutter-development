@@ -159,7 +159,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 border: OutlineInputBorder(),
               ),
               borderRadius: BorderRadius.circular(20),
-              value: selectedSection,
+              initialValue: selectedSection,
               items:
                   ['A', 'B', 'C', 'D', 'E', 'F'].map((section) {
                     return DropdownMenuItem<String>(
@@ -189,7 +189,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ), // You can also use Icons.date_range
                 border: OutlineInputBorder(),
               ),
-              value: selectedBatch,
+              initialValue: selectedBatch,
               items:
                   ['2021', '2022', '2023', '2024'].map((batch) {
                     return DropdownMenuItem<String>(
